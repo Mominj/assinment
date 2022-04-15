@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "5048012d-6bf3-4c6e-87e0-c09359a49625",
+		"name": "assinment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userCreate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\": \"student\",\r\n   \"email\": \"student@gmail.com\", \r\n   \"password\": \"12345\", \r\n   \"verification\": true,\r\n   \"role_id\": 2 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test@gmail.com\", \r\n    \"password\": \"123457\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTY0OTk1MzI1MCwiZXhwIjoxNjUwMjEyNDUwfQ.SNSOnpA3td93BHjQvaCsWjBr6dRHpVUVL6Bm-u5LHo4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delere user by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTY0OTkzNjgzNywiZXhwIjoxNjUwMTk2MDM3fQ.cxcoVByFEzMA--s2UClKJQ9yayHwjRtNL38zeQaQ3Wo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/delete/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"delete",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNjQ5OTM5MDg1LCJleHAiOjE2NTAxOTgyODV9.eVm5w6NYw6tJByg-UIHSPiA_HS0SuAhsCJt6jErQndk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNjQ5OTM5MDg1LCJleHAiOjE2NTAxOTgyODV9.eVm5w6NYw6tJByg-UIHSPiA_HS0SuAhsCJt6jErQndk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n   \"name\": \"test\",\r\n   \"email\": \"test@gmail.com\", \r\n   \"password\": \"12345\", \r\n   \"verification\": false,\r\n   \"role_id\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/update/17",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"update",
+						"17"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNjQ5OTM5MDg1LCJleHAiOjE2NTAxOTgyODV9.eVm5w6NYw6tJByg-UIHSPiA_HS0SuAhsCJt6jErQndk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\": \"test@gmail.com\", \r\n   \"password\": \"123457\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/change/password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"change",
+						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "course  create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTY0OTk2Mzg3NywiZXhwIjoxNjUwMjIzMDc3fQ.ZpxVJlB4PJuPm2QghCBBm16KR4SdfNT6rCcvCce6hf0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "file",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "file",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/mirza/Downloads/LD - 98997 (1) (2).jpg"
+						},
+						{
+							"key": "course_title",
+							"value": "bangla",
+							"type": "text"
+						},
+						{
+							"key": "course_description",
+							"value": "bangla description",
+							"type": "text"
+						},
+						{
+							"key": "creator_id",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/course/store",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "course show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGVfaWQiOjEsImlhdCI6MTY0OTk1NzY1NywiZXhwIjoxNjUwMjE2ODU3fQ.htwz2txH5NVmU1xq7cPYwCUzVLFJDUuQqoFkKvFGr4g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/course/1649963752056_LD - 98997 (1) (2).jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course",
+						"1649963752056_LD - 98997 (1) (2).jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mcq create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZV9pZCI6MywiaWF0IjoxNjUwMDI2MTc0LCJleHAiOjE2NTAyODUzNzR9.JFlYjAFRuD7EaNg7y_JrYDko7Gjn2jN6toRFHmuHR34",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"exam_class\": \"seven\",\r\n    \"exam_year\": \"2021\",\r\n    \"subject_name\": \"bangla\",\r\n    \"question\": \"capital of bangladesh\",\r\n    \"question_options\":[\r\n        \"dhaka\",\r\n        \"khulna\",\r\n        \"rajshahi\", \r\n        \"shylet\"\r\n    ],\r\n    \"question_asnwer\": \"dhaka\",\r\n    \"teacher_id\": 17\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mcq/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mcq",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "enroll course",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0dWRlbnRAZ21haWwuY29tIiwicm9sZV9pZCI6MiwiaWF0IjoxNjUwMDIxODQ1LCJleHAiOjE2NTAyODEwNDV9.BZ0D5yZ0NWWpnB6XGvitcZXUpwGVi3Oj1BWJ__LHsvc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"course_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/course/enroll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course",
+						"enroll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "examcreate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZV9pZCI6MywiaWF0IjoxNjUwMDI4NTg1LCJleHAiOjE2NTAyODc3ODV9.EKABAaadRRHS47-jSl-xiaGYPGabRlN0EWrWfPVwCeA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"exam_class\": \"seven\",\r\n    \"exam_year\": \"2021\",\r\n    \"subject_name\": \"bangla\",\r\n    \"setNumber\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/exam/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exam",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all course",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZV9pZCI6MywiaWF0IjoxNjUwMDI4NTg1LCJleHAiOjE2NTAyODc3ODV9.EKABAaadRRHS47-jSl-xiaGYPGabRlN0EWrWfPVwCeA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/course/show",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course",
+						"show"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
